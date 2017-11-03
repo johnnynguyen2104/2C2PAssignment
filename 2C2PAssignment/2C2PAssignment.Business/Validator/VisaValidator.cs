@@ -15,13 +15,13 @@ namespace _2C2PAssignment.Business.Validator
 
             if (result.Type == null)
             {
-                if (!IsLeapYear(expiriedDate.Year) && cardNumber[0] != '4')
+                if (!IsLeapYear(expiriedDate.Year) || cardNumber[0] != '4')
                 {
-                    result = new ValidateResultDto() { Type = CardType.Unknown };
+                    result.Type = CardType.Unknown;
                 }
                 else
                 {
-                    result = new ValidateResultDto() { Type = CardType.Visa };
+                    result.Type = CardType.Visa ;
                 }
             }
 
