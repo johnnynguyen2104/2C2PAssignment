@@ -15,13 +15,13 @@ namespace _2C2PAssignment.Business.Validator
 
             if (result.Type == null)
             {
-                if (cardNumber[0] != '3')
+                if (cardNumber[0] == '3')
                 {
-                    result = new ValidateResultDto() { Type = CardType.Unknown };
+                    result = new ValidateResultDto() { IsValid = true, Type = CardType.JCB };
                 }
                 else
                 {
-                    result = new ValidateResultDto() { IsValid = true, Type = CardType.JCB };
+                    result.Type = CardType.Unknown;
                 }
             }
 

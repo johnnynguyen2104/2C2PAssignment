@@ -15,13 +15,13 @@ namespace _2C2PAssignment.Business.Validator
 
             if (result.Type == null)
             {
-                if (!IsPrimeNumber(expiriedDate.Year) || cardNumber[0] != '5')
+                if (IsPrimeNumber(expiriedDate.Year) && cardNumber[0] == '5')
                 {
-                    result.Type = CardType.Unknown;
+                    result.Type = CardType.Master;
                 }
                 else
                 {
-                    result.Type = CardType.Master;
+                    result.Type = CardType.Unknown;
                 }
             }
 
