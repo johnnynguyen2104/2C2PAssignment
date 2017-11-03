@@ -21,13 +21,13 @@ namespace _2C2PAssignment.Tests.Validators
         {
             //Arr
             ValidatorBase val = new ValidatorBase();
-
+            SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
             var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
-            Assert.True((!result.IsValid));
+            Assert.True((result.IsValid));
             Assert.True(result.Type == CardType.Unknown);
         }
 
@@ -40,13 +40,13 @@ namespace _2C2PAssignment.Tests.Validators
         {
             //Arr
             ValidatorBase val = new ValidatorBase();
-
+            SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
             var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
-            Assert.True((!result.IsValid));
+            Assert.True((result.IsValid));
             Assert.True(result.Type == CardType.Unknown);
         }
 
@@ -61,13 +61,13 @@ namespace _2C2PAssignment.Tests.Validators
         {
             //Arr
             ValidatorBase val = new ValidatorBase();
-
+            SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
             var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
-            Assert.True((!result.IsValid));
+            Assert.True((result.IsValid));
             Assert.True(result.Type == CardType.Unknown);
         }
 
@@ -76,7 +76,7 @@ namespace _2C2PAssignment.Tests.Validators
         {
             //Arr
             ValidatorBase val = new ValidatorBase();
-
+            SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
             var result = val.Validate("123446789012345", null);
 
