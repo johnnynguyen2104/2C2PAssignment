@@ -15,21 +15,21 @@ namespace _2C2PAssignment.Business.Business
         {
             ValidateResultDto result;
 
-            if ((result = new JCBValidator().Validate(cardNumber, date)).Type != CardType.Unknown)
+            if ((result = new JCBValidator().Validate(cardNumber, date)).Type != null)
             {
                 return result;
             }
-            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != CardType.Unknown)
+            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != null)
             {
                 return result;
             }
-            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != CardType.Unknown)
+            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != null)
             {
                 return result;
             }
             else
             {
-                return result;
+                return result = new ValidateResultDto() { };
             }
         }
     }
