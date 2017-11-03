@@ -1,4 +1,5 @@
 ﻿using _2C2PAssignment.Business.Dtos;
+using _2C2PAssignment.Business.Helper;
 using _2C2PAssignment.Business.Validator;
 using NUnit.Framework;
 using System;
@@ -85,6 +86,21 @@ namespace _2C2PAssignment.Tests.Validators
             Assert.True(result.Type == CardType.Unknown);
         }
 
+        [Test]
+        [TestCase(11, 2016)]
+        public void Validate_GivenValidCardNumberWithExperiedDate_Should_ReturnIsValidFalse(int month, int year)
+        {
+            //Arr
+            ValidatorBase val = new ValidatorBase();
+            SystemDatetime.Now = () => new DateTime(2017, 11, 3);
 
+            //Act
+            var result = val.Validate("1234567890123456", new ExpriedDateData() { Month = month, Year = year});
+
+            //Assert
+            Assert.True(result != null);
+            Assert.True((!result.IsValid));
+            Assert.True(result.Type == null);
+        }
     }
 }
