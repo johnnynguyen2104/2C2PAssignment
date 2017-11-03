@@ -1,0 +1,5 @@
+C:\Users\BxMap\Desktop\2C2P\2C2PAssignment\2C2PAssignment.Business\bin\Debug\2C2PAssignment.Business.dll
+C:\Users\BxMap\Desktop\2C2P\2C2PAssignment\2C2PAssignment.Business\bin\Debug\2C2PAssignment.Business.pdb
+C:\Users\BxMap\Desktop\2C2P\2C2PAssignment\2C2PAssignment.Business\obj\Debug\2C2PAssignment.Business.csprojResolveAssemblyReference.cache
+C:\Users\BxMap\Desktop\2C2P\2C2PAssignment\2C2PAssignment.Business\obj\Debug\2C2PAssignment.Business.dll
+C:\Users\BxMap\Desktop\2C2P\2C2PAssignment\2C2PAssignment.Business\obj\Debug\2C2PAssignment.Business.pdb
