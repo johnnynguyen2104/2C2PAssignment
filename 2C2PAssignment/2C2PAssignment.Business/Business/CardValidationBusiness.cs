@@ -23,13 +23,14 @@ namespace _2C2PAssignment.Business.Business
             {
                 return result;
             }
-            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != null)
+            else if ((result = new MasterValidator().Validate(cardNumber, date)).Type != null)
             {
                 return result;
             }
             else
             {
-                return result = new ValidateResultDto() { };
+                result.Type = CardType.Unknown;
+                return result;
             }
         }
     }
