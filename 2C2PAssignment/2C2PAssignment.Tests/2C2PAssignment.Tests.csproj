@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CardValidationTest.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\JCBValidators.Tests.cs" />
     <Compile Include="Validators\MasterValidators.Tests.cs" />
