@@ -9,9 +9,9 @@ namespace _2C2PAssignment.Business.Validator
 {
     public class JCBValidator : ValidatorBase
     {
-        public override ValidateResultDto Validate(string cardNumber, ExpriedDateData experiedDate)
+        public override ValidateResultDto Validate(string cardNumber, ExpiryDateData expiriedDate)
         {
-            var result = base.Validate(cardNumber, experiedDate);
+            var result = base.Validate(cardNumber, expiriedDate);
 
             if (result.Type == null)
             {

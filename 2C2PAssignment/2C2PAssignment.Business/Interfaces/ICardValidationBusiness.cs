@@ -9,6 +9,6 @@ namespace _2C2PAssignment.Business.Interfaces
 {
     public interface ICardValidationBusiness
     {
-        ValidateResultDto Validate(string cardNumber, ExpriedDateData date);
+        ValidateResultDto Validate(string cardNumber, ExpiryDateData date);
     }
 }

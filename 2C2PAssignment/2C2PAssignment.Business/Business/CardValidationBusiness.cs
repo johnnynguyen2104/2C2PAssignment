@@ -11,7 +11,7 @@ namespace _2C2PAssignment.Business.Business
 {
     public class CardValidationBusiness : ICardValidationBusiness
     {
-        public ValidateResultDto Validate(string cardNumber, ExpriedDateData date)
+        public ValidateResultDto Validate(string cardNumber, ExpiryDateData date)
         {
             ValidateResultDto result;
 

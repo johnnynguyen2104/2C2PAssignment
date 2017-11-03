@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2C2PAssignment.Business.Dtos
 {
-    public class ExpriedDateData
+    public class ExpiryDateData
     {
         public int Month { get; set; }
 

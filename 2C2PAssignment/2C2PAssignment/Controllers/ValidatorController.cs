@@ -24,7 +24,7 @@ namespace _2C2PAssignment.Controllers
             validateBusiness = new CardValidationBusiness();
         }
         // GET: Validate
-        public ValidateResultDto Validate(string cardNumber, ExpriedDateData date)
+        public ValidateResultDto Validate(string cardNumber, ExpiryDateData date)
         {
             return validateBusiness.Validate(cardNumber, date);
         }

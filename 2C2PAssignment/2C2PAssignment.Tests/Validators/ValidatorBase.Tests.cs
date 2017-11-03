@@ -23,7 +23,7 @@ namespace _2C2PAssignment.Tests.Validators
             ValidatorBase val = new ValidatorBase();
 
             //Act
-            var result = val.Validate(cardNumber, new ExpriedDateData() { Month = 1, Year = 2019 });
+            var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
@@ -42,7 +42,7 @@ namespace _2C2PAssignment.Tests.Validators
             ValidatorBase val = new ValidatorBase();
 
             //Act
-            var result = val.Validate(cardNumber, new ExpriedDateData() { Month = 1, Year = 2019 });
+            var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
@@ -63,7 +63,7 @@ namespace _2C2PAssignment.Tests.Validators
             ValidatorBase val = new ValidatorBase();
 
             //Act
-            var result = val.Validate(cardNumber, new ExpriedDateData() { Month = 1, Year = 2019 });
+            var result = val.Validate(cardNumber, new ExpiryDateData() { Month = 1, Year = 2019 });
 
             //Assert
             Assert.True(result != null);
@@ -99,7 +99,7 @@ namespace _2C2PAssignment.Tests.Validators
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
 
             //Act
-            var result = val.Validate("1234567890123456", new ExpriedDateData() { Month = month, Year = year});
+            var result = val.Validate("1234567890123456", new ExpiryDateData() { Month = month, Year = year});
 
             //Assert
             Assert.True(result != null);
@@ -120,7 +120,7 @@ namespace _2C2PAssignment.Tests.Validators
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
 
             //Act
-            var result = val.Validate("1234567890123456", new ExpriedDateData() { Month = month, Year = year });
+            var result = val.Validate("1234567890123456", new ExpiryDateData() { Month = month, Year = year });
 
             //Assert
             Assert.True(result != null);

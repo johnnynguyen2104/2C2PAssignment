@@ -9,13 +9,13 @@ namespace _2C2PAssignment.Business.Validator
 {
     public class MasterValidator : ValidatorBase
     {
-        public override ValidateResultDto Validate(string cardNumber, ExpriedDateData experiedDate)
+        public override ValidateResultDto Validate(string cardNumber, ExpiryDateData expiriedDate)
         {
-            var result = base.Validate(cardNumber, experiedDate);
+            var result = base.Validate(cardNumber, expiriedDate);
 
             if (result.Type == null)
             {
-                if (!IsPrimeNumber(experiedDate.Year) && cardNumber[0] != '5')
+                if (!IsPrimeNumber(expiriedDate.Year) && cardNumber[0] != '5')
                 {
                     result = new ValidateResultDto() { Type = CardType.Unknown };
                 }
