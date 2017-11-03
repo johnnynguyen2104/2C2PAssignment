@@ -16,8 +16,9 @@ namespace _2C2PAssignment.Business.Validator
             DateTime now = SystemDatetime.Now.Invoke();
 
             if (string.IsNullOrEmpty(cardNumber)
-                || cardNumber.Trim().Length < 16
+                || cardNumber.Trim().Length != 16
                 || experiedDate == null
+                || !cardNumber.All(char.IsDigit)
                 )
             {
                 return new ValidateResultDto() { IsValid = false, Type = CardType.Unknown };
