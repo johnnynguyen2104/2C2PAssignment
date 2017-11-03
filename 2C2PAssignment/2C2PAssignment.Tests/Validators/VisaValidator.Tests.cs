@@ -1,4 +1,5 @@
-﻿using _2C2PAssignment.Business.Helper;
+﻿using _2C2PAssignment.Business.Dtos;
+using _2C2PAssignment.Business.Helper;
 using _2C2PAssignment.Business.Validator;
 using NUnit.Framework;
 using System;
@@ -23,11 +24,11 @@ namespace _2C2PAssignment.Tests.Validators
             VisaValidator visa = new VisaValidator();
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
-            var result = visa.Validate(cardNumber, new Business.Dtos.ExpiryDateData() { Month = 11, Year = 2017 });
+            var result = visa.Validate(cardNumber, new ExpiryDateData() { Month = 11, Year = 2017 });
             //Assert
             Assert.True(result != null);
             Assert.True(result.IsValid);
-            Assert.True(result.Type == Business.Dtos.CardType.Unknown);
+            Assert.True(result.Type == CardType.Unknown);
         }
 
         [Test]
@@ -41,7 +42,7 @@ namespace _2C2PAssignment.Tests.Validators
             VisaValidator visa = new VisaValidator();
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
-            var result = visa.Validate(cardNumber, new Business.Dtos.ExpiryDateData() { Month = 11, Year = 2017 });
+            var result = visa.Validate(cardNumber, new ExpiryDateData() { Month = 11, Year = 2017 });
             //Assert
             Assert.True(result != null);
             Assert.True(result.IsValid);
@@ -56,11 +57,11 @@ namespace _2C2PAssignment.Tests.Validators
             VisaValidator visa = new VisaValidator();
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
-            var result = visa.Validate(cardNumber, new Business.Dtos.ExpiryDateData() { Month = 11, Year = 2016 });
+            var result = visa.Validate(cardNumber, new ExpiryDateData() { Month = 11, Year = 2016 });
             //Assert
             Assert.True(result != null);
             Assert.True(!result.IsValid);
-            Assert.True(result.Type == Business.Dtos.CardType.Visa);
+            Assert.True(result.Type == CardType.Visa);
         }
 
 
@@ -75,7 +76,7 @@ namespace _2C2PAssignment.Tests.Validators
             VisaValidator visa = new VisaValidator();
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
-            var result = visa.Validate(cardNumber, new Business.Dtos.ExpiryDateData() { Month = 11, Year = year });
+            var result = visa.Validate(cardNumber, new ExpiryDateData() { Month = 11, Year = year });
             //Assert
             Assert.True(result != null);
             Assert.True(result.IsValid);
@@ -92,11 +93,11 @@ namespace _2C2PAssignment.Tests.Validators
             VisaValidator visa = new VisaValidator();
             SystemDatetime.Now = () => new DateTime(2017, 11, 3);
             //Act
-            var result = visa.Validate(cardNumber, new Business.Dtos.ExpiryDateData() { Month = 11, Year = year });
+            var result = visa.Validate(cardNumber, new ExpiryDateData() { Month = 11, Year = year });
             //Assert
             Assert.True(result != null);
             Assert.True(result.IsValid);
-            Assert.True(result.Type == Business.Dtos.CardType.Visa);
+            Assert.True(result.Type == CardType.Visa);
         }
 
     }
