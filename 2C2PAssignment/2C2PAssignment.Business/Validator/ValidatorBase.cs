@@ -24,7 +24,7 @@ namespace _2C2PAssignment.Business.Validator
                 return new ValidateResultDto() { IsValid = false, Type = CardType.Unknown };
             }
 
-            return result = new ValidateResultDto() { IsValid = (experiedDate.Year <= now.Year && experiedDate.Month <= now.Month) };
+            return result = new ValidateResultDto() { IsValid = (experiedDate.Year > now.Year || ( experiedDate.Year == now.Year && experiedDate.Month >= now.Month)) };
         } 
     }
 }
