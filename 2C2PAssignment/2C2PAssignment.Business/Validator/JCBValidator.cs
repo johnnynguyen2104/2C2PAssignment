@@ -21,7 +21,7 @@ namespace _2C2PAssignment.Business.Validator
                 }
                 else
                 {
-                    result = new ValidateResultDto() { Type = CardType.JCB };
+                    result = new ValidateResultDto() { IsValid = true, Type = CardType.JCB };
                 }
             }
 
