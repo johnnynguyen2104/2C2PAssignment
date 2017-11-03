@@ -69,7 +69,7 @@ namespace _2C2PAssignment.Tests.Validators
         [TestCase("4234567890123456", 2019)]
         [TestCase("4234567890123456", 2021)]
         [TestCase("4234567890123456", 2022)]
-        public void Validate_GivenCardNumberStartWithFourButNotLeapYear_Should_ReturnVisaCartTypeWithInvalid(string cardNumber, int year)
+        public void Validate_GivenCardNumberStartWithFourButNotLeapYearButValid_Should_ReturnNullCardTypeWithInvalid(string cardNumber, int year)
         {
             //Arr
             VisaValidator visa = new VisaValidator();
