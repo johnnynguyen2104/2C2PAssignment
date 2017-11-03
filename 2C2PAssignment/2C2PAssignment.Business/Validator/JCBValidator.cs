@@ -19,10 +19,6 @@ namespace _2C2PAssignment.Business.Validator
                 {
                     result = new ValidateResultDto() { IsValid = true, Type = CardType.JCB };
                 }
-                else
-                {
-                    result.Type = CardType.Unknown;
-                }
             }
 
             return result;

@@ -19,10 +19,6 @@ namespace _2C2PAssignment.Business.Validator
                 {
                     result.Type = CardType.Visa;
                 }
-                else
-                {
-                    result.Type = CardType.Unknown;
-                }
             }
 
             return result;

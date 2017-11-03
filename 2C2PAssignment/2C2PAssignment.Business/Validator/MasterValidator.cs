@@ -19,10 +19,7 @@ namespace _2C2PAssignment.Business.Validator
                 {
                     result.Type = CardType.Master;
                 }
-                else
-                {
-                    result.Type = CardType.Unknown;
-                }
+
             }
 
             return result;
