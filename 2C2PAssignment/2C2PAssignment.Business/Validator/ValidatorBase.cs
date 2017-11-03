@@ -12,22 +12,18 @@ namespace _2C2PAssignment.Business.Validator
     {
         public virtual ValidateResultDto Validate(string cardNumber, ExpriedDateData experiedDate)
         {
-            ValidateResultDto result = new ValidateResultDto();
+            ValidateResultDto result;
             DateTime now = SystemDatetime.Now.Invoke();
-            if (string.IsNullOrEmpty(cardNumber) 
-                || cardNumber.Trim().Length < 16 
+
+            if (string.IsNullOrEmpty(cardNumber)
+                || cardNumber.Trim().Length < 16
                 || experiedDate == null
                 )
             {
                 return new ValidateResultDto() { IsValid = false, Type = CardType.Unknown };
             }
 
-            if ((experiedDate.Month > now.Month && experiedDate.Year > now.Year))
-            {
-                return new ValidateResultDto() { IsValid = false };
-            }
-
-            return result;
+            return result = new ValidateResultDto() { IsValid = (experiedDate.Year <= now.Year && experiedDate.Month <= now.Month) };
         } 
     }
 }
