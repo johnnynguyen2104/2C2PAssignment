@@ -13,25 +13,25 @@ namespace _2C2PAssignment.Business.Business
     {
         public ValidateResultDto Validate(string cardNumber, ExpiryDateData date)
         {
-            ValidateResultDto result;
+            ValidateResultDto result = null;
+            List<ValidatorBase> validators = new List<ValidatorBase>()
+            {
+                new JCBValidator(),
+                new VisaValidator(),
+                new MasterValidator()
+            };
 
-            if ((result = new JCBValidator().Validate(cardNumber, date)).Type != null)
+            foreach (var item in validators)
             {
-                return result;
+                if ((result = item.Validate(cardNumber, date)).Type != null)
+                {
+                    return result;
+                }
             }
-            else if ((result = new VisaValidator().Validate(cardNumber, date)).Type != null)
-            {
-                return result;
-            }
-            else if ((result = new MasterValidator().Validate(cardNumber, date)).Type != null)
-            {
-                return result;
-            }
-            else
-            {
-                result.Type = CardType.Unknown;
-                return result;
-            }
+
+
+            result.Type = CardType.Unknown;
+            return result;
         }
     }
 }
